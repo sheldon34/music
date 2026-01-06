@@ -47,7 +47,7 @@ public ResponseEntity<EventsDto> updateEvent( @PathVariable Long id ,
     EventsDto eventsDto=eventService.updateEvent(id,title, venueName,location, startDate, ticketLink , imageUrl, LocationLongitude,  LocationLatitude , status);
     return  new ResponseEntity<>(eventsDto, HttpStatus.OK);
 }
-@GetMapping()
+@GetMapping("/getAll")
 public ResponseEntity<List<EventsDto>> getAllEvents(){
     List<EventsDto> eventsDto=eventService.getAllEvents();
     return new ResponseEntity<>(eventsDto, HttpStatus.OK);

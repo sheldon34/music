@@ -25,7 +25,7 @@ public class TrackController {
         TrackDto track=trackService.updateTrack(id, trackDto);
         return new  ResponseEntity<>(track, HttpStatus.OK);
     }
-    @GetMapping()
+    @GetMapping("/getAll")
     public ResponseEntity<List<TrackDto>> getAllTracks(){
         List<TrackDto> tracks = trackService.getAllTracks();
         return new ResponseEntity<>(tracks, HttpStatus.OK);

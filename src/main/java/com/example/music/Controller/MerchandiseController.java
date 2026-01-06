@@ -32,7 +32,7 @@ public class MerchandiseController {
         merchandiseDto MerchandiseDto=merchandiseService.updateMerchandise(id,merchandiseName,merchandisePrice, merchandiseImg,merchandiseDetails);
         return new ResponseEntity<>(MerchandiseDto, HttpStatus.OK);
    }
-   @GetMapping()
+   @GetMapping("/getAll")
    ResponseEntity <List<merchandiseDto>> getAllMerchandise(){
         List<merchandiseDto> MerchandiseDto=merchandiseService.getAllMerchandise();
         return new ResponseEntity<>(MerchandiseDto,HttpStatus.OK);
