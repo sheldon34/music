@@ -22,7 +22,8 @@ public class EventsDto {
     private LocalDate startDate;
     private String ticketLink;
     private String imageUrl;
-
+    private Double LocationLongitude;
+    private Double LocationLatitude;
     private eventStatus status;
 
 }

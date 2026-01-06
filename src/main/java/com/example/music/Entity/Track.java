@@ -1,17 +1,17 @@
 package com.example.music.Entity;
 
-import com.example.music.Enums.trackType;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
+import com.example.music.Enums.TrackSource;
+import jakarta.persistence.*;
+import lombok.Data;
 
-import java.util.Date;
-
+@Data
+@Entity
 public class Track {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long  id;
-    private String title;
-    private String artist;
+    private String videoId;
     @Enumerated(EnumType.STRING)
-    private trackType type =trackType.ORIGINAL;
-    private Date releaseDate;
-
+    private TrackSource type=TrackSource.YOUTUBE;
+    private String storageUrl;
 }

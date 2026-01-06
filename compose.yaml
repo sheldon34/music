@@ -1,9 +1,27 @@
 services:
-  postgres:
-    image: 'postgres:latest'
+  db:
+    image: postgres:17
     environment:
-      - 'POSTGRES_DB=mydatabase'
-      - 'POSTGRES_PASSWORD=secret'
-      - 'POSTGRES_USER=myuser'
+      POSTGRES_DB: music
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 0001
     ports:
-      - '5432'
+      - "5433:5432"
+    networks:
+      - music-network
+  app:
+    build : .
+    container_name: music_app
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5433/music
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: 0001
+    networks:
+      - music-network
+
+networks:
+  music-network:

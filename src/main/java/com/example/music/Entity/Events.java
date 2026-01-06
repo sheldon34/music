@@ -28,4 +28,6 @@ private String ticketLink;
 private String imageUrl;
 @Enumerated(EnumType.STRING)
 private eventStatus status=eventStatus.UPCOMING;
+private Double LocationLongitude;
+private Double LocationLatitude;
 }

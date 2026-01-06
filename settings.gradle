@@ -1,1 +1,8 @@
-rootProject.name = 'music'
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        mavenCentral()
+    }
+}
+
+rootProject.name = "music"
