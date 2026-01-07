@@ -2,8 +2,7 @@ FROM eclipse-temurin:21-jre-alpine
 WORKDIR /app
 #
 ## Copy the jar built locally (adjust the path/pattern as needed)
-
-COPY build/libs/music-0.0.1-SNAPSHOT.jar app.jar
+COPY build/libs/*.jar app.jar
 #
 EXPOSE 8080
 #
