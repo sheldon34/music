@@ -15,8 +15,9 @@ public class CorsConfig {
     public CorsFilter corsFilter() {
         CorsConfiguration config = new CorsConfiguration();
         config.setAllowCredentials(true);
-        config.addAllowedOriginPattern("https://project-i-frontend-6m7l.vercel.app/");
-        config.addAllowedOriginPattern("http://localhost:5173");
+        config.addAllowedOriginPattern("https://music-f-h3lwt93wd-sheldon34s-projects.vercel.app");
+        config.addAllowedOriginPattern("http://localhost:3000");
+        config.addAllowedOriginPattern("http://localhost:3001");
         config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         config.setAllowedHeaders(List.of("Authorization", "Content-Type", "X-Requested-With", "Accept"));
 
