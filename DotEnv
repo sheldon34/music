@@ -1,0 +1,3 @@
+DB_PASSWORD=GoNwiFZZtaBwmBrtFURKIpgYqJqSdODy
+DB_USERNAME=postgres
+Postgres.DATABASE_URL:postgresql://postgres:GoNwiFZZtaBwmBrtFURKIpgYqJqSdODy@shuttle.proxy.rlwy.net:15055/railway
