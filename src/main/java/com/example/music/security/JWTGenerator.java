@@ -35,7 +35,9 @@ public class JWTGenerator {
             .claim("roles",roles)
             .setIssuedAt(currentDate)
             .setExpiration(expiryDate)
-            .signWith(SignatureAlgorithm.HS512,SecurityConstants.JWT_SECRET)
+            // .signWith(SignatureAlgorithm.HS512,SecurityConstants.JWT_SECRET)
+          .signWith(SignatureAlgorithm.HS512, SecurityConstants.JWT_SECRET.getBytes()) // Ensure valid secret
+
             .compact();
 
 return token;
