@@ -2,9 +2,13 @@ package com.example.music.Entity;
 
 import com.example.music.Enums.TrackSource;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 public class Track {
     @Id
