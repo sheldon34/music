@@ -1,4 +1,5 @@
 package com.example.music.security;
+import org.springframework.stereotype.Component;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -20,7 +21,7 @@ import org.springframework.web.filter.OncePerRequestFilter;
 import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
-
+@Component
 @Slf4j
 public class JWTAuthentificationFilter extends OncePerRequestFilter {
 @Autowired
