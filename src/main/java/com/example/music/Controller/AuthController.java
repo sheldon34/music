@@ -33,7 +33,8 @@ public class AuthController {
     @PatchMapping("/users/{id}") // Fixed typo: changed "user" to "users" to match DELETE
     public ResponseEntity<Map<String, Object>> updateUser(
             @PathVariable String id,
-            @RequestBody Map<String, Object> updates) {
+            @RequestBody
+            Map<String, Object> updates) {
         Map<String, Object> updatedUser = userService.updateUser(id, updates);
         return ResponseEntity.ok(updatedUser);
     }
