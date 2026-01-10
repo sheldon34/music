@@ -28,7 +28,7 @@ import javax.crypto.spec.SecretKeySpec;
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Stream;
-
+@Configuration
 @EnableWebSecurity
 @EnableMethodSecurity(securedEnabled = true)
 @RequiredArgsConstructor
@@ -103,9 +103,16 @@ public class SecurityConfig {
     CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
         // Allow your frontend origin (CHANGE THIS to your actual frontend URL)
-        configuration.setAllowedOrigins(List.of("http://localhost:3000", "http://localhost:4200"));
+//        configuration.setAllowedOrigins(List.of("http://localhost:3000", "http://localhost:4200",""));
         configuration.setAllowedMethods(List.of("GET", "POST", "PATCH","PUT", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(List.of("Authorization", "Content-Type"));
+        configuration.setAllowedOriginPatterns(List.of(
+                "http://localhost:3000",
+                "http://localhost:5173",
+                "https://music-f-t.vercel.app/",
+                "https://music-f-a5xu7642c-sheldon34s-projects.vercel.app",
+                "https://*.vercel.app"
+        ));
         configuration.setAllowCredentials(true); // Needed if you use Authorization header
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
