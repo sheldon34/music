@@ -30,7 +30,6 @@ import java.util.List;
 import java.util.stream.Stream;
 @Configuration
 @EnableWebSecurity
-@EnableMethodSecurity(securedEnabled = true)
 @RequiredArgsConstructor
 public class SecurityConfig {
     @Value("${okta.oauth2.client-secret}")
