@@ -23,4 +23,3 @@ target/
 # IDEs
 /.idea/
 *.iml
-build.gradle
