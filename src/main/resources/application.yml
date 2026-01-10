@@ -1,8 +1,8 @@
 okta:
   oauth2:
-    issuer: https://dev-4g28t22j7fb43hp7.us.auth0.com/
-    client-id: 5jEC2d6rr4OmjDTjpouq4ihB4mh7LkLk
-    client-secret: ti2nvOmd_y_TQlfCSUTFab6hJGa6Enmgb5OgI4uv0QnWg_zZBBsMdRpEXP4LrHPk
+    issuer: https://dev-org1gkrj5i6kdrdr.us.auth0.com/
+    client-id: YJmn8m8hXZkTEr5kSIjZGIkIHkPBU3Li
+    client-secret: I8Vozq8EU9oOTif2HMucFj6A-9YwVVbuk8TCgqV7kQg1rc_CnchGt_il4MdOjQNM
 
 resend:
   api-key: re_LXf4WeDe_4ZAvCYKD7CnkPYPF5sbQHmPg
@@ -12,4 +12,4 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: https://dev-4g28t22j7fb43hp7.us.auth0.com/
+          issuer-uri: https://dev-org1gkrj5i6kdrdr.us.auth0.com/
