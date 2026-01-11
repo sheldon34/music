@@ -6,9 +6,7 @@ DotEnv
 build
 # Gradle
 .gradle/
-build/
 out/
-target/
 
 # Gradle wrapper (keep wrapper files if you commit them - do not ignore gradle/wrapper if you want to commit the wrapper)
 # (If you ignore the folder, use exception rules to keep gradle-wrapper.jar/properties)
@@ -16,7 +14,6 @@ target/
 
 # Compiled / packaged files
 *.class
-*.jar
 *.war
 *.ear
 
