@@ -7,25 +7,18 @@
 #EXPOSE 8080
 ##
 #ENTRYPOINT ["java", "-jar", "app.jar"]
-# STAGE 1: Build the application
-FROM gradle:8.5-jdk21-alpine AS builder
+# builder stage: build the jar with gradle
+FROM gradle:8.4-jdk17 AS builder
 WORKDIR /app
+COPY gradle gradle
+COPY gradlew .
+COPY build.gradle settings.gradle ./
+COPY src ./src
+RUN chmod +x ./gradlew && ./gradlew clean bootJar -x test
 
-# Copy only necessary files for dependency resolution first (caching layer)
-#COPY build.gradle settings.gradle ./
-#COPY src ./src
-
-# Build the application (skipping tests to speed up deployment)
-# This creates the JAR file inside the Docker container
-#RUN gradle build -x test --no-daemon
-
-# STAGE 2: Run the application
-FROM eclipse-temurin:21-jre-alpine
+# runtime stage: copy the built jar
+FROM eclipse-temurin:17-jdk-jammy
 WORKDIR /app
-
-# Copy the JAR file from the "builder" stage above
-#COPY --from=builder /app/build/libs/*.jar app.jar
-COPY build/libs/*.jar app.jar
-
+COPY --from=builder /app/build/libs/*.jar app.jar
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java","-jar","app.jar"]
