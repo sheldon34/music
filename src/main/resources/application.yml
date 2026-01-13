@@ -13,3 +13,9 @@ spring:
       resourceserver:
         jwt:
           issuer-uri: https://dev-org1gkrj5i6kdrdr.us.auth0.com/
+
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 50MB
+      max-request-size: 50MB
