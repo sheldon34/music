@@ -4,6 +4,7 @@ import com.example.music.Dto.EventsDto;
 import com.example.music.Enums.eventStatus;
 import com.example.music.service.EventService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -21,7 +22,7 @@ public class EventController {
   public ResponseEntity<EventsDto> createEvent(@RequestParam ("title")String title,
                                         @RequestParam("venueName") String venueName,
                                          @RequestParam ("location")String location,
-                                        @RequestParam ("startDate")LocalDate startDate,
+                                               @RequestParam("startDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate startDate,
                                         @RequestParam ("ticketLink")String ticketLink ,
                                         @RequestParam ("imageUrl") MultipartFile imageUrl,
                                         @RequestParam ("LocationLongitude") Double LocationLongitude,
@@ -38,7 +39,7 @@ public ResponseEntity<EventsDto> updateEvent( @PathVariable Long id ,
                                                  @RequestParam (value = "title",required = false)String title,
                                                @RequestParam(value = "venueName",required = false) String venueName,
                                                @RequestParam (value = "location",required = false)String location,
-                                               @RequestParam (value = "startDate",required = false)LocalDate startDate,
+                                              @RequestParam(value = "startDate", required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate startDate,
                                                @RequestParam (value = "ticketLink",required = false)String ticketLink ,
                                                @RequestParam (value = "imageUrl",required = false) MultipartFile imageUrl,
                                                @RequestParam (value = "LocationLongitude",required = false) Double LocationLongitude,
