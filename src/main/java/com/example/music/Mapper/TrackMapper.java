@@ -8,7 +8,7 @@ public class TrackMapper {
     public static Track mapToTrack (TrackDto trackDto){
         Track track = new Track();
       track.setType(trackDto.getType());
-      track.setVideoId(track.getVideoId());
+      track.setVideoId(trackDto.getVideoId());
       track.setStorageUrl(trackDto.getStorageUrl());
 
 
@@ -18,8 +18,8 @@ public class TrackMapper {
         TrackDto trackDto = new TrackDto();
         trackDto.setId(track.getId());
         trackDto.setType(track.getType());
-        trackDto.setStorageUrl(track.getStorageUrl());
         trackDto.setVideoId(track.getVideoId());
+        trackDto.setStorageUrl(track.getStorageUrl());
         return trackDto;
     }
 }
