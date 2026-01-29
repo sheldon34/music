@@ -16,6 +16,7 @@ public class TrackMapper {
     }
     public static TrackDto mapToTrackDto (Track track){
         TrackDto trackDto = new TrackDto();
+        trackDto.setId(track.getId());
         trackDto.setType(track.getType());
         trackDto.setStorageUrl(track.getStorageUrl());
         trackDto.setVideoId(track.getVideoId());
