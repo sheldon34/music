@@ -25,9 +25,9 @@ public class merchandiseServiceImp implements merchandiseService {
 Merchandise.setMerchandiseName(merchandiseName);
 Merchandise.setMerchandisePrice(merchandisePrice);
 Merchandise.setMerchandiseDetail(merchandiseDetails);
-        if (merchandiseImg!=null){
-            String Image=r2MediaService.uploadFile(merchandiseImg);
-            String ImageUrl= r2MediaService.getPublicUrl(Image);
+        if (merchandiseImg!=null &&  !merchandiseImg.isEmpty()){
+            String ImageKey=r2MediaService.uploadFile(merchandiseImg);
+            String ImageUrl= r2MediaService.getPublicUrl(ImageKey);
             Merchandise.setMerchandiseImg(ImageUrl);
         }
         merchandise savedMerchandise=merchandiseRepo.save(Merchandise);
@@ -42,7 +42,7 @@ Merchandise.setMerchandiseDetail(merchandiseDetails);
         Merchandise.setMerchandiseName(merchandiseName);
         Merchandise.setMerchandisePrice(merchandisePrice);
         Merchandise.setMerchandiseDetail(merchandiseDetails);
-if (Merchandise.getMerchandiseImg()!=null){
+if (Merchandise.getMerchandiseImg()!=null && !merchandiseImg.isEmpty()){
     String newImage=r2MediaService.updateFile(Merchandise.getMerchandiseImg(),merchandiseImg);
     String newImageUrl=r2MediaService.getPublicUrl(newImage);
     Merchandise.setMerchandiseImg(newImageUrl);
