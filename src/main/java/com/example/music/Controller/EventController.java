@@ -18,7 +18,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class EventController {
     private final EventService eventService;
-@PostMapping("/upload")
+@PostMapping(value = "/upload", consumes = "multipart/form-data")
   public ResponseEntity<EventsDto> createEvent(@RequestParam ("title")String title,
                                         @RequestParam("venueName") String venueName,
                                          @RequestParam ("location")String location,
@@ -34,7 +34,7 @@ public class EventController {
 
   }
 
-@PatchMapping("update/{id}")
+@PatchMapping(value = "update/{id}", consumes = "multipart/form-data")
 public ResponseEntity<EventsDto> updateEvent( @PathVariable Long id ,
                                                  @RequestParam (value = "title",required = false)String title,
                                                @RequestParam(value = "venueName",required = false) String venueName,
