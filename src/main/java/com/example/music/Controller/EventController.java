@@ -34,7 +34,7 @@ public class EventController {
 
   }
 
-@PatchMapping(value = "update/{id}", consumes = "multipart/form-data")
+@PatchMapping(value = "/update/{id}", consumes = "multipart/form-data")
 public ResponseEntity<EventsDto> updateEvent( @PathVariable Long id ,
                                                  @RequestParam (value = "title",required = false)String title,
                                                @RequestParam(value = "venueName",required = false) String venueName,
