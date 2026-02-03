@@ -46,6 +46,8 @@ public ResponseEntity<EventsDto> updateEvent( @PathVariable Long id ,
                                                @RequestParam(value = "LocationLatitude",required = false) Double LocationLatitude ,
                                                @RequestParam(value = "status",required = false) eventStatus status){
     EventsDto eventsDto=eventService.updateEvent(id,title, venueName,location, startDate, ticketLink , imageUrl, LocationLongitude,  LocationLatitude , status);
+    System.out.println("ticketLink: " + eventsDto.getTicketLink());
+    System.out.println("startDate: " + eventsDto.getStartDate());
     return  new ResponseEntity<>(eventsDto, HttpStatus.OK);
 }
 @GetMapping("/getAll")
