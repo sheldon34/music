@@ -1,4 +1,4 @@
-//package com.example.music.security;
+package com.example.music.Security;
 //
 //import io.jsonwebtoken.Claims;
 //import io.jsonwebtoken.Jwts;
@@ -62,8 +62,8 @@
 //    }
 //}//
 
-package com.example.music.security;
 
+import com.example.music.security.SecurityConstants;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;

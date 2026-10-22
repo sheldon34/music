@@ -72,8 +72,10 @@
 //        return null;
 //    }
 //}
-package com.example.music.security;
+package com.example.music.Security;
 
+import com.example.music.Security.JWTGenerator;
+import com.example.music.security.UserDetailService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
