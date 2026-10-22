@@ -11,6 +11,7 @@ public class EventsMapper {
         events.setLocation(eventsdto.getLocation());
         events.setTitle(eventsdto.getTitle());
         events.setImageUrl(eventsdto.getImageUrl());
+        events.setTicketLink(eventsdto.getTicketLink());
         events.setLocationLatitude(eventsdto.getLocationLatitude());
         events.setLocationLongitude(eventsdto.getLocationLongitude());
         events.setStartDate(eventsdto.getStartDate());
@@ -22,6 +23,8 @@ public class EventsMapper {
         eventsdto.setVenueName(events.getVenueName());
         eventsdto.setStatus(events.getStatus());
         eventsdto.setLocation(events.getLocation());
+        eventsdto.setTicketLink(events.getTicketLink());
+        eventsdto.setStartDate(events.getStartDate());
         eventsdto.setTitle(events.getTitle());
         eventsdto.setImageUrl(events.getImageUrl());
         eventsdto.setLocationLatitude(events.getLocationLatitude());
